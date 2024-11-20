@@ -18,6 +18,7 @@ import { CurseWritingComponent } from './components/curse-writing/curse-writing.
 import { TasksComponent } from './components/tasks/tasks.component';
 import { CurseNumberComponent } from './components/curse-number/curse-number.component';
 import { RewardsComponent } from './components/rewards/rewards.component';
+import { authGuard } from './services/auth.guard';
 
 export const routes: Routes = [
     {
@@ -39,7 +40,7 @@ export const routes: Routes = [
     },
 
     {
-        path: "homeTeacher",component:HeaderTComponent,
+        path: "homeTeacher",component:HeaderTComponent, canActivate:[authGuard],
     },
     {
         path: "loginTeacher",component:LoginTeacherComponent
@@ -49,40 +50,40 @@ export const routes: Routes = [
         path: "signin/Student",component:SignInStudentComponent
     },
     {
-        path:"homeStudent",component:HeaderSComponent
+        path:"homeStudent",component:HeaderSComponent, canActivate:[authGuard],
     },
     {
         path:"loginStudent",component:LoginStudentComponent
     },
     {
-        path: "postWork", component:PostWorkComponent
+        path: "postWork", component:PostWorkComponent, canActivate:[authGuard]
     },
     {
-        path:"works",component:WorksComponent
+        path:"works",component:WorksComponent,canActivate: [authGuard]
     },
     {
-        path:"seeStudent",component:SeeStudentsComponent
+        path:"seeStudent",component:SeeStudentsComponent, canActivate: [authGuard]
     },
     {
-        path:"seePostWork",component:SeePostWorkComponent
+        path:"seePostWork",component:SeePostWorkComponent, canActivate: [authGuard]
     },
     {
-        path:"workStudents",component:SeeWorksComponent,
+        path:"workStudents",component:SeeWorksComponent, canActivate: [authGuard]
     },
     {
-        path:"curseReading",component:CurseReadingComponent
+        path:"curseReading",component:CurseReadingComponent, canActivate:[authGuard]
     },
     {
-        path:"curseWriting",component:CurseWritingComponent
+        path:"curseWriting",component:CurseWritingComponent, canActivate:[authGuard]
     },
     {
-        path:"MyTask",component:TasksComponent
+        path:"MyTask",component:TasksComponent, canActivate:[authGuard]
     },
     {
-        path:"curseNumber",component:CurseNumberComponent
+        path:"curseNumber",component:CurseNumberComponent, canActivate:[authGuard]
     },
     {
-        path:"rewards",component:RewardsComponent
+        path:"rewards",component:RewardsComponent, canActivate:[authGuard]
     }
     
 

@@ -98,14 +98,17 @@
 
 @media (max-width: 768px) {
   .sidenav {
+
     transform: translateX(-100%);
   }
 
   .sidenav.active {
+
     transform: translateX(0);
   }
 
   .menu-toggle {
+    
     display: block;
   }
 }
