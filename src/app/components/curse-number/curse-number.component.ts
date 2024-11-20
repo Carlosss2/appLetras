@@ -10,10 +10,12 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
 import { ContenedNumberComponent } from '../contened-number/contened-number.component';
+import { CounterComponent } from '../counter/counter.component';
+
 @Component({
   selector: 'app-curse-number',
   templateUrl: './curse-number.component.html',
-  styleUrl: './curse-number.component.scss',
+  styleUrls: ['./curse-number.component.scss'], // Corregido el nombre de 'styleUrl' a 'styleUrls'
   standalone: true,
   imports: [
     MatToolbarModule,
@@ -23,7 +25,8 @@ import { ContenedNumberComponent } from '../contened-number/contened-number.comp
     MatIconModule,
     AsyncPipe,
     CommonModule,
-    ContenedNumberComponent
+    ContenedNumberComponent,
+    CounterComponent
   ]
 })
 export class CurseNumberComponent {
